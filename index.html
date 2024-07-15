@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Claims Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="Block LLP.png">
+        <ul class="nav-bar">
+            <li><a>Home</a></li>
+            <li><a>About</a></li>
+            <li><a>Services</a></li>
+            <li><a>Attorneys</a></li>
+            <li><a>Contact</a></li>
+        </ul>
+        <div class="phone-number">
+            <img src="icon-phone-bg.png">
+            <p>(818) 745-7777</p>
+        </div>
+    </header>
+    
+    <main>
+        <section class="title-desc-links-cont"> 
+            <div class="title-desc"> 
+                <h1>Injury Settlement Calculator</h1>
+                <p>The Injury Settlement Calculator is a valuable tool used to determine the fair settlement value for individuals who have suffered injuries due to various reasons. It calculates the monetary compensation one should receive for the pain, suffering, medical bills, and lost income resulting from the injury.</p>
+            </div>
+            <!-- <div class="calc-links-cont">
+                <ul> Calculators
+                    <li>Burn Injury Calculator</li>
+                    <li>Wrong Death Calculator</li>
+                    <li>Pain and Suffering Calculator</li>
+                    <li>Accident Settlement Calculator</li>
+                </ul>
+            </div> -->
+        </section>
+
+        <!-- <div class="disclaimer-container">
+            <p class="disclaimer"><span>Disclaimer:</span> This calculator is an estimate and not a substitute for legal or financial advice. the value of a claim may vary based on different factors.</p>
+        </div> -->
+
+        <div class="form-container">
+            <h2>Calculator</h2>
+
+            <div id="step-1" class="form-step active">
+                <h2>Select Injury Type</h2>
+
+                <div class="icon-selection">
+                    
+                    <div class="icon-item" onclick="selectIcon(this, 'car-accident')">
+                        <input type="radio" id="car-accident" name="injury-type" value="car-accident" required>
+                        <label for="car-accident">
+                            <img src="auto-accident.png" alt="Car Accident">
+                            Car Accident
+                        </label>
+                    </div>
+
+                    <div class="icon-item" onclick="selectIcon(this, 'wrongful-death')">
+                        <input type="radio" id="wrongful-death" name="injury-type" value="wrongful-death" required>
+                        <label for="wrongful-death">
+                            <img src="dead-body.png" alt="Wrongful Death">
+                            Wrongful Death
+                        </label>
+                    </div>
+                
+                    <div class="icon-item" onclick="selectIcon(this, 'slip-fall')">
+                        <input type="radio" id="slip-fall" name="injury-type" value="slip-fall" required>
+                        <label for="slip-fall">
+                            <img src="fall.png" alt="Slip and Fall">
+                            Slip and Fall
+                        </label>
+                    </div>
+
+                    <div class="icon-item" onclick="selectIcon(this, 'dog-bite')">
+                        <input type="radio" id="dog-bite" name="injury-type" value="dog-bite" required>
+                        <label for="dog-bite">
+                            <img src="pawprint.png" alt="Dog Bite">
+                            Dog Bite
+                        </label>
+                    </div>
+                </div>
+                <h2>Accident Details</h2>
+                <div class="form-row">
+                    <label>Accident within the last 2 years?</label>
+                    <div>
+                        <input type="radio" id="accident-yes" name="accident-within-2-years" value="yes" required>
+                        <label for="accident-yes">Yes</label>
+                        <input type="radio" id="accident-no" name="accident-within-2-years" value="no" required>
+                        <label for="accident-no">No</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label>Was the accident your fault?</label>
+                    <div>
+                        <input type="radio" id="fault-yes" name="accident-fault" value="yes" required>
+                        <label for="fault-yes">Yes</label>
+                        <input type="radio" id="fault-no" name="accident-fault" value="no" required>
+                        <label for="fault-no">No</label>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <label>Were you physically injured?</label>
+                    <div>
+                        <input type="radio" id="injured-yes" name="physically-injured" value="yes" required>
+                        <label for="injured-yes">Yes</label>
+                        <input type="radio" id="injured-no" name="physically-injured" value="no" required>
+                        <label for="injured-no">No</label>
+                    </div>
+                </div>
+                <div class="submit-row next-btn-container">
+                    <button type="button" onclick="nextStep()" class="next-btn">Next</button>
+                </div>
+            </div>  
+
+            <div id="step-2" class="form-step">
+                <div class="form-row">
+                    <label for="medical-expenses">Estimated Total Medical Expenses ($):</label>
+                    <input type="text" id="medical-expenses" name="medical-expenses">
+                </div>
+            
+                <div class="form-row">
+                    <label for="loss-of-wages">Estimated Total Loss of Wages ($):</label>
+                    <input type="text" id="loss-of-wages" name="loss-of-wages">
+                </div>
+                
+                <div class="form-row">
+                    <label for="future-medical-expenses">Estimated Future Medical Expenses ($):</label>
+                    <input type="text" id="future-medical-expenses" name="future-medical-expenses">
+                </div>
+                
+                <div class="form-row">
+                    <label for="pain-slider">Estimated Pain & Suffering:</label>
+                    <div class="slider-container"> 
+                        <input type="range" min="1" max="3" value="1" id="pain-slider" name="pain-slider" class="pain-slider">
+                        <span id="slider-value">Mild</span>
+                    </div>
+                </div>
+                
+                <div class="form-row submit-row">
+                    <input type="submit" value="Submit">
+                </div>
+                
+                <div class="form-row output-value-cont">
+                    <label for="output-value">Estimated Compensation ($):</label>
+                    <span id="output-value">0</span>
+                </div>
+
+                <div class="disclaimer-container">
+                    <p class="disclaimer"><span>Disclaimer:</span> This calculator is an estimate and not a substitute for legal or financial advice. the value of a claim may vary based on different factors.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-about">
+            <h3>About Us</h3>
+            <p>At Block LLP, our Burbank and Los Angeles County attorneys have proven over the years that we can be trusted with even the most complex of litigation. Whether you have been wrongfully injured by a reckless driver or a loved one was hurt due to a defect in a product manufactured by a major corporation, we have what it takes to advocate for your right to just compensation.</p>
+        </div>
+
+        <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Attorneys</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-maps">
+            <img src="maps.png">
+        </div> 
+    </footer>
+    <div class="copyright">
+        <p>&copy; 2024 BLOCK LLP. All rights reserved.</p>
+    </div>
+<script  src="index.js"></script>    
+</body>
+</html>

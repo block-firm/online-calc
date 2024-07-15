@@ -1,0 +1,438 @@
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    font-family: arial, sans-serif;
+}
+
+header {
+    display: flex;
+    padding: 2% 5%;
+    align-items: center;
+    justify-content: space-between;
+    background: #002d3f;
+    color: white;
+}
+
+header img {
+    max-width: 10%;
+}
+
+header ul {
+    display: flex;
+    margin-left: 75px;
+}
+
+header ul li {
+    margin: 0px 10px;
+    text-transform: uppercase;
+}
+
+.phone-number {
+    display: flex;
+    align-items: center;
+    /* gap: 10px; */
+    justify-content: flex-end;
+}
+
+.phone-number p {
+    font-size: 1.4rem;
+}
+
+.phone-number img {
+    width: 100%;
+    margin-right: 10px;
+}
+
+/* MAIN */
+
+main {
+    padding: 2% 5%;
+    background-image:  linear-gradient(to bottom, rgba(0, 45, 63, 0.75), rgba(0, 45, 63, 0.2)),url(LA-skyline-night.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+section.title-desc-links-cont {
+    margin-top: 1rem;
+    /* display: flex;
+    gap: 4rem; */
+    width: 100%;
+    margin-bottom: 2rem;
+    color: #fff;
+    text-align: center;
+    max-width: 65%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* .title-desc {
+    /* flex: 0 0 60%; 
+} */
+
+.title-desc h1 {
+    margin-bottom: 2%;
+    font-size: 2.4rem;
+}
+
+.title-desc  p {
+    font-size: 1.3rem;
+}
+
+/* .calc-links-cont ul {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.calc-links-cont ul li {
+    list-style: inside;
+    margin-left: 2px;
+    font-weight: normal;
+    font-size: 1.2rem;
+}
+
+.calc-links-cont ul li::marker {
+    color: #00709d;
+    font-size: 1.6rem;
+}
+
+.calc-links-cont ul li:nth-child(1) {
+    margin-top: 5px;
+} */
+
+.disclaimer-container {
+    padding: 2% 4%;
+    background: rgba(219, 218, 218, 0.90);
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.disclaimer span {
+    font-weight: bold;
+}
+
+.disclaimer {
+    font-size: 13px;
+    text-align: center;
+    color: rgb(53, 52, 52);
+}
+
+
+/* FORMS */
+
+.form-container {
+    margin: 2% 10%;
+    padding: 2%;
+    /* border: 1px solid #002d3f; */
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.90);
+    box-shadow: 5px 5px 10px rgb(58, 58, 58);
+}
+
+.form-container h2 {
+    background: #00709d;
+    padding: 2%;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.form-row label {
+    flex: 1;
+    margin-right: 20px;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.form-row input {
+    flex: 2;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* .form-row .explanation {
+    font-size: 0.9em;
+    color: #666;
+    justify-content: flex-end;
+    /* text-align: right; 
+} */
+
+.form-row input[type="submit"] {
+    flex: 0;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+
+.form-row input[type="submit"]:hover {
+    background: #002d3f;
+    color: white;
+}
+
+.submit-row {
+    justify-content: flex-end;
+}
+
+/* Form Part 1 */
+
+/* .form-step {
+    display: flex;
+    flex-direction: column;
+} */
+
+.icon-selection {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.icon-item {
+    cursor: pointer;
+    text-align: center;
+    border: 2px solid transparent;
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.icon-item.selected {
+    border-color:#002d3f;
+    background: rgb(214, 212, 212);
+}
+
+.icon-item:hover {
+    cursor: pointer;
+    background: rgb(214, 212, 212);
+    /* box-shadow: 5px 5px 10px rgb(198, 197, 197); */
+}
+
+.icon-item img {
+    display: block;
+    max-width: 100px;
+    margin: 0 auto 10px;
+}
+
+.icon-item label {
+    cursor: pointer;
+}
+
+.icon-item input[type="radio"] {
+    display: none;
+}
+
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+.next-btn-container {
+    display: flex;
+}
+
+.next-btn {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+
+/* FORM PART 2*/
+
+.pain-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    background: rgb(196, 194, 194); 
+    /* background: transparent; */
+    opacity: 0.7;
+    border-radius: 20px;
+    transition: opacity 0.2s;
+    
+}
+
+.pain-slider:hover {
+    opacity: 1;
+}
+
+.pain-slider::-webkit-slider-thumb {
+    -webkit-appearance: none; 
+    appearance: none;
+    background: #007BFF;
+    border-radius: 50%;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+.pain-slider::-moz-range-thumb {
+    background: #007BFF;
+    cursor: pointer;
+    height: 20px;
+    width: 20px;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+} 
+
+.pain-slider::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px; /* Adjust the height if needed */
+    background: #007BFF;
+    border-radius: 4px; /* Optional: rounded corners */
+    cursor: pointer;
+}
+
+.slider-container {
+    position: relative;
+    width: 63.7%;
+    padding-right: 20px;
+}
+
+#slider-value {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    /* transform: translateX(-50%); */
+    padding: 2px 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.output-value-cont {
+    background: #00709d;
+    padding: 3% 2%;
+    color: white;
+}
+
+
+
+/* FOOTER */
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 2% 5%;
+    background: #002d3f;
+    color: white;
+}
+
+footer .footer-about {
+    flex: 1;
+}
+
+footer .footer-about h3 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    font-weight: 575;
+    text-align: center;;
+}
+
+footer .footer-links {
+    flex: 1;
+    text-align: center;
+}
+
+footer .footer-links h3 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+    font-weight: 575;
+}
+
+footer .footer-links ul li a {
+    color: white;
+}
+
+footer .footer-links ul li {
+    margin-top: 10px;
+}
+
+footer .footer-maps {
+    flex: 1;
+    text-align: right; /* why does text align work with an img? I tried justify content: flex-end but it did nothing*/
+}
+
+footer .footer-maps img {
+    max-width: 90%;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 12px;
+    background: #002d3f;
+    color: white;
+    padding: 2% 5%;
+}
+
+/* footer .copyright {
+    display: block;
+} */
+
+
+
+/* Dynamic Display*/
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-bar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .title-desc-links-cont {
+        flex-direction: column;
+    }
+
+    .title-desc {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .calc-links-cont {
+        margin-bottom: 20px;
+    }
+
+    .form-container {
+        margin: 0 auto;
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .phone-number {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .phone-number img {
+        margin-bottom: 10px;
+    }
+}
