@@ -39,7 +39,9 @@ const question3 = document.getElementById('future-medical-expenses');
 const painLevels = {
     1: 'Mild',
     2: 'Medium',
-    3: 'Intense'
+    3: 'Intense',
+    4: 'Very Severe',
+    5: 'Extreme'
 };
 
 // Display the default slider value
@@ -63,6 +65,10 @@ function updateOutputValue() {
         baseMultiplier = 2.2;
     } else if (sliderValue == 3) {
         baseMultiplier = 3.3;
+    } else if (sliderValue == 4) {
+        baseMultiplier = 4.0;
+    } else if (sliderValue == 5) {
+        baseMultiplier = 5.0;
     }
 
     let painMultiplier = 1;
@@ -72,6 +78,10 @@ function updateOutputValue() {
         painMultiplier = 1.5; // Medium
     } else if (sliderValue == 3) {
         painMultiplier = 2.0; // Intense
+    } else if (sliderValue == 4) {
+        painMultiplier = 2.5; // Very Severe
+    } else if (sliderValue == 5) {
+        painMultiplier = 3.0; // Extreme
     }
 
     const outputValue = questionsSum * baseMultiplier * painMultiplier;
